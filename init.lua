@@ -3,30 +3,23 @@
 
 -- updater
 Services = {
-    --updater = "http://localhost/api/updater.php", --./updater
-    --status = "http://localhost/login.php", --./client_entergame | ./client_topmenu
-    --websites = "http://localhost/?subtopic=accountmanagement", --./client_entergame "Forgot password and/or email"
-    --createAccount = "http://localhost/clientcreateaccount.php", --./client_entergame -- createAccount.lua
+    updater = "https://baiak-global.com/zautoupdate/apiotclient/updater.php", --./updater
+    status = "https://baiak-global.com/gin.php", --./client_entergame | ./client_topmenu
+    websites = "https://baiak-global.com/index.php/account/manage", --./client_entergame "Forgot password and/or email"
+    createAccount = "https://baiak-global.com/index.php/account/create", --./client_entergame -- createAccount.lua
 }
 
---[[
 Servers_init = {
-    ["http://127.0.0.1/login.php"] = {
+    ["http://51.79.84.50/gin.php"] = {
         ["port"] = 80,
-        ["protocol"] = 1320,
+        ["protocol"] = 1412,
         ["httpLogin"] = true
     },
-    ["ip.net"] = {
-        ["port"] = 7171,
-        ["protocol"] = 860,
-        ["httpLogin"] = false
-    },
 }
-]]
 
-g_app.setName("OTClient - Redemption");
-g_app.setCompactName("otclient");
-g_app.setOrganizationName("otcr");
+g_app.setName("Baiak Global - OTClient");
+g_app.setCompactName("baiakglobal");
+g_app.setOrganizationName("BG");
 
 g_app.hasUpdater = function()
     return (Services.updater and Services.updater ~= "" and g_modules.getModule("updater"))
